@@ -1,12 +1,17 @@
+enum RadioMessage {
+    message1 = 49434
+}
 radio.onReceivedNumber(function (receivedNumber) {
     sprite += 10
 })
 input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
+    game.addScore(1)
 })
 input.onGesture(Gesture.Shake, function () {
     if (sprite >= 90) {
         radio.sendString("")
+        game.addScore(100)
     }
 })
 radio.onReceivedString(function (receivedString) {
@@ -14,6 +19,7 @@ radio.onReceivedString(function (receivedString) {
 })
 input.onButtonPressed(Button.B, function () {
     sprite = sprite - 10
+    game.addScore(1)
 })
 let sprite = 0
 led.setBrightness(4)
@@ -26,6 +32,7 @@ basic.showLeds(`
     # # # # #
     `)
 sprite = 0
+game.setScore(0)
 basic.forever(function () {
     led.setBrightness(2)
     if (sprite >= 100) {
