@@ -21,14 +21,14 @@ radio.setGroup(255)
 basic.showLeds(`
     # # # # #
     # # # # #
-    # # . # #
+    # # # # #
     # # # # #
     # # # # #
     `)
 sprite = 0
 basic.forever(function () {
     led.setBrightness(2)
-    if (sprite >= 10) {
+    if (sprite >= 100) {
         basic.showLeds(`
             . # # # #
             # # # # #
@@ -36,7 +36,7 @@ basic.forever(function () {
             # # # # #
             # # # # .
             `)
-    } else if (sprite >= 20) {
+    } else if (sprite >= 90) {
         basic.showLeds(`
             . # # # #
             . # # # #
@@ -44,7 +44,7 @@ basic.forever(function () {
             # # # # .
             # # # # .
             `)
-    } else if (sprite >= 30) {
+    } else if (sprite >= 80) {
         basic.showLeds(`
             . # # # #
             . # # # #
@@ -52,7 +52,7 @@ basic.forever(function () {
             # # # # .
             # # # # .
             `)
-    } else if (sprite >= 40) {
+    } else if (sprite >= 70) {
         basic.showLeds(`
             . # # # #
             . # # # .
@@ -60,7 +60,7 @@ basic.forever(function () {
             . # # # .
             # # # # .
             `)
-    } else if (sprite >= 50) {
+    } else if (sprite == 60) {
         basic.showLeds(`
             . # # # .
             . # # # .
@@ -68,7 +68,7 @@ basic.forever(function () {
             . # # # .
             . # # # .
             `)
-    } else if (sprite >= 60) {
+    } else if (sprite == 50) {
         basic.showLeds(`
             . # # . .
             . # # # .
@@ -76,7 +76,7 @@ basic.forever(function () {
             . # # # .
             . . # # .
             `)
-    } else if (sprite >= 70) {
+    } else if (sprite == 40) {
         basic.showLeds(`
             . # . . .
             . # # # .
@@ -84,7 +84,7 @@ basic.forever(function () {
             . # # # .
             . . . # .
             `)
-    } else if (sprite >= 80) {
+    } else if (sprite == 30) {
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -92,26 +92,34 @@ basic.forever(function () {
             . # # # .
             . . . . .
             `)
-    } else if (sprite >= 90) {
+    } else if (sprite == 20) {
         basic.showLeds(`
             . . . . .
-            . . # # .
+            . . # . .
             . # . # .
-            . # # . .
+            . . # . .
             . . . . .
             `)
-    } else if (sprite >= 100) {
+    } else if (sprite == 10) {
         basic.showLeds(`
             . . . . .
-            . . # # .
             . . . . .
-            . # # . .
+            . . # . .
             . . . . .
+            . . . . .
+            `)
+    } else if (sprite >= 110) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # . # #
+            # # # # #
+            # # # # #
             `)
     }
 })
 basic.forever(function () {
-    if (sprite >= 110) {
+    if (sprite > 110) {
         game.gameOver()
     }
 })

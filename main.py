@@ -8,7 +8,7 @@ def on_button_pressed_a():
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
 def on_gesture_shake():
-    if sprite >= 160:
+    if sprite >= 90:
         radio.send_string("")
 input.on_gesture(Gesture.SHAKE, on_gesture_shake)
 
@@ -36,7 +36,7 @@ sprite = 0
 
 def on_forever():
     led.set_brightness(2)
-    if sprite == 10:
+    if sprite >= 10:
         basic.show_leds("""
             . # # # #
             # # # # #
@@ -44,7 +44,7 @@ def on_forever():
             # # # # #
             # # # # .
             """)
-    elif sprite == 20:
+    elif sprite >= 20:
         basic.show_leds("""
             . # # # #
             . # # # #
@@ -52,7 +52,7 @@ def on_forever():
             # # # # .
             # # # # .
             """)
-    elif sprite == 30:
+    elif sprite >= 30:
         basic.show_leds("""
             . # # # #
             . # # # #
@@ -60,7 +60,7 @@ def on_forever():
             # # # # .
             # # # # .
             """)
-    elif sprite == 40:
+    elif sprite >= 40:
         basic.show_leds("""
             . # # # #
             . # # # .
@@ -68,7 +68,7 @@ def on_forever():
             . # # # .
             # # # # .
             """)
-    elif sprite == 50:
+    elif sprite >= 50:
         basic.show_leds("""
             . # # # .
             . # # # .
@@ -76,7 +76,7 @@ def on_forever():
             . # # # .
             . # # # .
             """)
-    elif sprite == 60:
+    elif sprite >= 60:
         basic.show_leds("""
             . # # . .
             . # # # .
@@ -84,7 +84,7 @@ def on_forever():
             . # # # .
             . . # # .
             """)
-    elif sprite == 70:
+    elif sprite >= 70:
         basic.show_leds("""
             . # . . .
             . # # # .
@@ -92,7 +92,7 @@ def on_forever():
             . # # # .
             . . . # .
             """)
-    elif sprite == 80:
+    elif sprite >= 80:
         basic.show_leds("""
             . . . . .
             . # # # .
@@ -100,7 +100,7 @@ def on_forever():
             . # # # .
             . . . . .
             """)
-    elif sprite == 90:
+    elif sprite >= 90:
         basic.show_leds("""
             . . . . .
             . . # # .
@@ -108,7 +108,7 @@ def on_forever():
             . # # . .
             . . . . .
             """)
-    elif sprite == 100:
+    elif sprite >= 100:
         basic.show_leds("""
             . . . . .
             . . # # .
@@ -119,6 +119,6 @@ def on_forever():
 basic.forever(on_forever)
 
 def on_forever2():
-    if sprite == 100:
+    if sprite >= 110:
         game.game_over()
 basic.forever(on_forever2)
